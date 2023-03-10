@@ -1,0 +1,85 @@
+.icon {
+  font-size: 40px;
+}
+
+.titre {
+  font-size: 30px;
+}
+
+.form-control {
+  border-radius: 3px;
+  width: 600px;
+  margin-left: 20px;
+}
+
+.search-icon {
+  position: absolute;
+  z-index: 10;
+  right: 45%;
+  top: 25px;
+  color: blue;
+}
+
+.badge{
+  font-size : 10;
+}
+.navbar {
+ 
+  background-color:  rgb(0 154 0);
+  
+}
+.m{
+border-radius: 10px;
+margin-right: 10px;
+}
+  
+  .para{
+  width:90px;
+  
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color  #111 (black) on hover */
+  li a:hover {
+    background-color:rgb(22, 133, 245);
+    border-radius: 5px;
+  }
+  .titre{font-weight: extra bold;
+  font-style: calc();
+  font-size: 50px;
+ }
+ .m{ width: 400px;
+ }
+ /* icone*/
+ .fa-solid{font-size: 37px;}
+ .fa{font-size: 20px;
+ color:gray;
+ margin: 5px;}
+ .fa-envelopes{font-size: 20px;}
+ .fa-brands{
+ font-size: 25px;
+ color:gray;
+ }
+ .fa-facebook{margin-right: 5px;
+ }
+ .fa-instagram{margin-right: 2px;}
+ .sticky-bottom{ width: 100px;
+ }

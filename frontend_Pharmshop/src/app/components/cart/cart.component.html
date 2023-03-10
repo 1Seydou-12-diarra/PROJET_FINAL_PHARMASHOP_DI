@@ -1,0 +1,74 @@
+<ng-container *ngIf="products.length != 0">
+  <div class="container">
+    <div class="card-table">
+      <div class="cart-product">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>N°</th>
+              <th>Nom Produit</th>
+              <th>image produit</th>
+              <th>Description</th>
+              <th>Prix</th>
+              <th>Quantite</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of products; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ item.nom }}</td>
+              <td>
+                <img
+                  style="width: 120px"
+                  [src]="item.img"
+                  [alt]="item.nom"
+                />
+              </td>
+              <td style="width: 25%;">{{ item.descript }}</td>
+              <td style="width: 12%;">{{ item.prix }}</td>
+              <td style="width: 12%;">{{ item.quantity }}</td>
+              <td style="width: 12%;">{{ item.total }}</td>
+              <td>
+                <button (click)="removeItem(item)" class="btn btn-danger">
+                  <i class="las la-trash-alt"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4"></td>
+              <td><button (click)="emptycart()" class="btn btn-danger">Vider le Panier</button></td>
+              <td><button routerLink="/products" class="btn btn-primary">continuer l'achat</button></td>
+      
+              <td><span class="fw-bold">Total Panier : </span> {{grandTotal}}FCFA</td>
+              <td><button routerLink="/products" class="btn btn-primary">valider la commande</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="products.length == 0">
+  <div class="container">
+    <div class="card">
+      <h4 class="card-title">Mon panier</h4>
+    </div>
+    <div class="center">
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/005/006/007/non_2x/no-item-in-the-shopping-cart-click-to-go-shopping-now-concept-illustration-flat-design-eps10-modern-graphic-element-for-landing-page-empty-state-ui-infographic-icon-vector.jpg"
+        alt="cartEmpty"
+      />
+      
+      <button routerLink="/products" class="btn btn-primary">retourner sur la page de produit</button>
+    </div>
+  </div>
+</ng-container>
+
+
+
+
+
+

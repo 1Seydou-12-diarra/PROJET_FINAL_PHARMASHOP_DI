@@ -1,0 +1,41 @@
+<div class="cart-top container-fluid">
+  <div class="container d-flex">
+    <div class="item">
+      <a  (click)="filter('')">
+        <h5>All products</h5>
+      </a>
+    </div>
+    <div class="item">
+      <a  (click)="filter('corps')">
+        <h5>Corps</h5>
+      </a>
+    </div>
+    <div class="item">
+      <a  (click)="filter('cheveux')">
+        <h5>cheveux</h5>
+      </a>
+    </div>
+    <div class="item">
+      <a  (click)="filter('Beauté')">
+        <h5>Beaute</h5>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let item of filterCategory | filter:searchKey:'nom'">
+      <div class="card col-md-3">
+        <img [src]="item.img" [alt]="item.nom">
+        <h4 class="item-card">{{item.nom}}</h4>
+        <p class="item-card">{{item.descript}}</p>
+        <p> <span class="fw-bold">Price : </span>{{item.prix}}FCFA</p>
+        <button class="btn btn-primary" (click)="addtocart(item)">Ajouter Au panier</button>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<footer class="mt-5 p-1 bg-dark text-white sticky-bottom">
+  <p class="text-center"><span><i class="bi bi-facebook"></i>&emsp;&emsp;<i class="bi bi-github"></i>&emsp;&emsp;<i class="bi bi-linkedin"></i></span><br> <span class=" fw-semibold">Copyright &copy; 2018 Tout droit réservés | Groupe DYD Services</span></p>
+</footer>
+
