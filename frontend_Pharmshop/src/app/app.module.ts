@@ -10,7 +10,9 @@ import { ProductsComponent } from './components/products/products.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './administrateur/admin/admin.component';
 import { FilterPipe } from './filter.pipe';
-import { FormsModule } from '@angular/forms'; // Importer FormsModule ici
+import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './authentification/register/register.component';
+import { LoginComponent } from './authentification/login/login.component'; // Importer FormsModule ici
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { FormsModule } from '@angular/forms'; // Importer FormsModule ici
     ProductsComponent,
     HomeComponent,
     AdminComponent,
-    FilterPipe
+    FilterPipe,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

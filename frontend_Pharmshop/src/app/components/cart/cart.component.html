@@ -26,13 +26,13 @@
                   [alt]="item.nom"
                 />
               </td>
-              <td style="width: 25%;">{{ item.descript }}</td>
+              <td style="width: 25%;">{{ item.descriptions }}</td>
               <td style="width: 12%;">{{ item.prix }}</td>
               <td style="width: 12%;">{{ item.quantity }}</td>
               <td style="width: 12%;">{{ item.total }}</td>
               <td>
                 <button (click)="removeItem(item)" class="btn btn-danger">
-                  <i class="las la-trash-alt"></i>
+                  <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                 </button>
               </td>
             </tr>
@@ -42,7 +42,7 @@
               <td><button routerLink="/products" class="btn btn-primary">continuer l'achat</button></td>
       
               <td><span class="fw-bold">Total Panier : </span> {{grandTotal}}FCFA</td>
-              <td><button routerLink="/products" class="btn btn-primary">valider la commande</button></td>
+              <td><button routerLink="/register" class="btn btn-primary">valider la commande</button></td>
             </tr>
           </tbody>
         </table>

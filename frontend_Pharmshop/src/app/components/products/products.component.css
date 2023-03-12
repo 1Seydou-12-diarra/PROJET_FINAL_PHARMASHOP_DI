@@ -28,6 +28,7 @@
 .card {
   padding: 20px;
   margin: 40px;
+  transform: rotateY(160deg);
 }
 
 .item-card {
@@ -51,3 +52,11 @@
 .cart-top {background-color: rgb(157, 202, 157);
 }
 .bottom{width: 100px;}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.card:hover {
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+  border: 2px solid rgb(187, 187, 207);
+}

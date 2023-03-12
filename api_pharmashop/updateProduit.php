@@ -9,8 +9,7 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 require 'db.php';
-
-
+if ($_SERVER['REQUEST_METHOD'] == 'UPDATE') {
 $data = json_decode(file_get_contents('php://input'));
 
 $id =$data->produit_id;
@@ -49,16 +48,15 @@ if ($result) {
   ]);
 }
 exit();
-
-  
+  }
     
   }
-
-
-
-  
  ?>
 
   
   
-        
+$produits=$id_produits->id_commande;
+    $produit = $id_produits->produit;
+    $quantite = $id_produits->quantite;
+    $prix_produit = $id_produits->prix_unitaire;
+          

@@ -1,7 +1,7 @@
 .g{
     height: 430px;
     width: 100%;
-    margin-top: 15px;
+    
    
    }
     
@@ -9,29 +9,75 @@
 height: 30pxa;
 
 }
+
 .card-group{ margin-top: 15px;
 }
 .card-img{ width: 30px;
-height: 60px;
+height: 200px;
+margin-bottom: 15px;
+transition: 0.3s ease-in-out;
+transform: scale(1.05);
+transition: all 0.2s ease-in-out;
+border: 2px solid rgb(187, 187, 207)
 }
 .m{margin: 30px;
 }
-
-.image-bougeante {
-    transition: transform 0.2s ease;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-    filter: saturate(150%);
-    transition: transform 0.3s ease;
-    border-radius: 3px;
-    opacity: 1; /* Opacité normale de l'image */
-   transition: opacity 0.3s ease-in-out; /* Ajout d'une transition pour un effet de fondu */
-}
- 
- 
- .effet-image:hover {
-    opacity: 0.5; /* Opacité réduite de l'image lorsque la souris survole l'image */
-    transform: translate(5px, 5px);
-    transform: scale(1.1);
+.card {
+   padding: 20px;
+   margin: 40px;
+   background-color: #f8f9fa;
+   /* transform: rotateY(180deg);
+   transform: rotateX(-180deg); */
  }
+ 
+ .item-card {
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   max-width: 100ch;
+ }
+ 
+ 
+ .card img:hover {
+   transition: 0.3s ease-in-out;
+   transform: scale(1.1);
+ }
+ .cart-top {background-color: rgb(157, 202, 157);
+ }
+ .bottom{width: 50px;}
+ .card {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ }
+ .card:hover {
+   transform: scale(1.05);
+   transition: all 0.2s ease-in-out;
+   border: 2px solid rgb(187, 187, 207);
+ }
+ .carousel-item {
+   opacity: 0;
+   transition: opacity 0.5s ease-in-out;
+ }
+ 
+ .carousel-item.active {
+   opacity: 1;
+ }
+ .carousel-item {
+   transform: scale(0.8);
+   transition: transform 0.5s ease-in-out;
+ }
+ 
+ .carousel-item.active {
+   transform: scale(1);
+ }
+ .carousel-item {
+   transform: translateX(-50%);
+   transition: transform 0.5s ease-in-out;
+ }
+ 
+ .carousel-item.active {
+   transform: translateX(0);
+ }
+
+
  
  

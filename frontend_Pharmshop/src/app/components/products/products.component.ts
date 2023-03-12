@@ -18,12 +18,12 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this._api.getProduct().subscribe((response) => {
       this.productList = response;
-      this.filterCategory = response
+      this.filterCategory = response;
       this.productList.forEach((a:any)=>{
       if(a.category ==="corps" || a.category ==="cheveux"  || a.category ==="Beauté"){
           a.category ="Beauté"
         }
-        Object.assign(a,{quantity:1,total:a.price});
+        Object.assign(a,{quantity:1,total:a.prix});
       });
       console.log(this.productList)
     });

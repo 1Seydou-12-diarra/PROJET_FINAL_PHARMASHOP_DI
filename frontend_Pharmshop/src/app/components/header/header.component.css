@@ -3,7 +3,7 @@
 }
 
 .titre {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .form-control {
@@ -11,7 +11,9 @@
   width: 600px;
   margin-left: 20px;
 }
-
+.f{ margin-right:30px;
+height: 48px;
+}
 .search-icon {
   position: absolute;
   z-index: 10;
@@ -25,9 +27,19 @@
 }
 .navbar {
  
-  background-color:  rgb(0 154 0);
+  background-color: rgb(42, 192, 42);
+  transition: background-color 0.5s ease-in-out;
+ 
   
 }
+.navbar.scrolled {
+ 
+  border-bottom: 2px solid #007bff;
+  background-image:linear-gradient(to bottom, #007bff,  rgb(42, 192, 42));
+}
+;
+.cli{margin-right: 20px;}
+
 .m{
 border-radius: 10px;
 margin-right: 10px;
@@ -35,6 +47,7 @@ margin-right: 10px;
   
   .para{
   width:90px;
+  
   
   }
   ul {
@@ -69,7 +82,7 @@ margin-right: 10px;
  .m{ width: 400px;
  }
  /* icone*/
- .fa-solid{font-size: 37px;}
+ .fa-solid{font-size: 20px;}
  .fa{font-size: 20px;
  color:gray;
  margin: 5px;}
@@ -83,3 +96,11 @@ margin-right: 10px;
  .fa-instagram{margin-right: 2px;}
  .sticky-bottom{ width: 100px;
  }
+ #sty{
+ position: sticky;
+ 
+ }
+ .phar{
+ font-size:20px;
+ }
+ .las{font-size: 30px;}

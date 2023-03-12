@@ -9,6 +9,7 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 require 'db.php';
+if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
 $data = json_decode(file_get_contents('php://input'));
 $id = $data->produit_id;
 $sql = 'DELETE  FROM produits WHERE produit_id=:produit_id';
@@ -31,7 +32,7 @@ if ($data) {
          ]);}
         exit();
 
-
+        }
 ?>
 
 
