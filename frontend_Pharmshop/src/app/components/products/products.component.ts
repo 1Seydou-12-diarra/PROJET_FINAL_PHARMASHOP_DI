@@ -20,8 +20,10 @@ export class ProductsComponent implements OnInit {
       this.productList = response;
       this.filterCategory = response;
       this.productList.forEach((a:any)=>{
-      if(a.category ==="corps" || a.category ==="cheveux"  || a.category ==="Beauté"){
+      if(a.category ==="corps" || a.category ==="cheveux"  || a.category ==="Beauté" || a.category ==="Parfums" || a.category ==="Bébé et Enfants"|| a.category ==="Homme"){
           a.category ="Beauté"
+         
+          
         }
         Object.assign(a,{quantity:1,total:a.prix});
       });

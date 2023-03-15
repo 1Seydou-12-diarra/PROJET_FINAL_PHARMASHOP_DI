@@ -1,0 +1,20 @@
+<br><br><br>
+<form class="form-signin container" [formGroup]='loginForm' (submit)="login()">
+    <h1 class="h3 mb-3 fw-normal">Connectez vous</h1>
+    <div class="form-floating">
+      <input type ="text" class="form-control" id="floatingInput" formControlName="username">
+      <label for="floatingInput">Username</label>
+    </div>
+    <br>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPasswords" formControlName="passwords">
+      <label for="floatingPassword">Password</label>
+    </div>
+    <p>Vous n'avez pas encore de compte? <a href="/register">S'inscrire maintenant</a></p>
+    <br><br>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Connexion</button>
+    <br>
+    <br>
+    <p *ngIf="message" style="color: red;" class="alert alert-danger alert-dismissible fade show">{{message}}</p>
+</form>
+<app-root></app-root>

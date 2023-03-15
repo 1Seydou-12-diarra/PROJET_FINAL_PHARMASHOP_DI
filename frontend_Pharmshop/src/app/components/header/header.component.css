@@ -1,10 +1,7 @@
 .icon {
   font-size: 40px;
 }
-
-.titre {
-  font-size: 25px;
-}
+.phar{ font-size: 19px;}
 
 .form-control {
   border-radius: 3px;
@@ -27,15 +24,19 @@ height: 48px;
 }
 .navbar {
  
-  background-color: rgb(42, 192, 42);
+ 
+  background-color:rgb(0 154 0);
   transition: background-color 0.5s ease-in-out;
+  height: 90px;
+
  
   
 }
+.ct{margin-right: 15px;}
 .navbar.scrolled {
  
   border-bottom: 2px solid #007bff;
-  background-image:linear-gradient(to bottom, #007bff,  rgb(42, 192, 42));
+  background-image:linear-gradient(to bottom, #007bff,  rgb(17, 228, 17));
 }
 ;
 .cli{margin-right: 20px;}

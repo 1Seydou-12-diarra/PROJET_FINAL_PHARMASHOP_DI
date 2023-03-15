@@ -10,9 +10,12 @@ import { ProductsComponent } from './components/products/products.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './administrateur/admin/admin.component';
 import { FilterPipe } from './filter.pipe';
-import { FormsModule } from '@angular/forms';
-import { RegisterComponent } from './authentification/register/register.component';
-import { LoginComponent } from './authentification/login/login.component'; // Importer FormsModule ici
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './components/footer/footer.component';
+import { RegisterComponent } from './register/register/register.component';
+import { LoginComponent } from './login/login/login.component';
+
+
 
 
 @NgModule({
@@ -24,14 +27,20 @@ import { LoginComponent } from './authentification/login/login.component'; // Im
     HomeComponent,
     AdminComponent,
     FilterPipe,
+    FooterComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule ,
     HttpClientModule,
+    ReactiveFormsModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

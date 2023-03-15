@@ -1,16 +1,25 @@
 <?php
-//post:http://localhost:8000/categorie.php
-// Headers requis
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: GET");
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
- require 'db.php';
+  /* Handle CORS */
+
+// Specify domains from which requests are allowed
+header('Access-Control-Allow-Origin: *');
+
+// Specify which request methods are allowed
+header('Access-Control-Allow-Methods: PUT, GET,POST');
+
+// Additional headers which may be sent along with the CORS request
+header('Access-Control-Allow-Headers: X-Requested-With,Authorization,Content-Type');
+
+// Set the age to 1 day to improve speed/caching.
+header('Access-Control-Max-Age: 86400');
+
+
+
+
  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  $data = json_decode(file_get_contents('php://input'));
- 
+ require 'db.php';
 
  $nom_categorie =  $data->nom_categorie;
  $description =  $data->description;

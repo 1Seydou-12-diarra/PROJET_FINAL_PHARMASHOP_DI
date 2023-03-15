@@ -1,13 +1,24 @@
 <?php
-// Headers requis
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+/* Handle CORS */
+
+// Specify domains from which requests are allowed
+header('Access-Control-Allow-Origin: *');
+
+// Specify which request methods are allowed
+header('Access-Control-Allow-Methods: PUT, GET,POST');
+
+// Additional headers which may be sent along with the CORS request
+header('Access-Control-Allow-Headers: X-Requested-With,Authorization,Content-Type');
+
+// Set the age to 1 day to improve speed/caching.
+header('Access-Control-Max-Age: 86400');
 
 require 'db.php';
-session_start();
+require 'jwt.php';
+// Exit early so the page isn't fully loaded for options requests
+
+    
+
 // Si la méthode HTTP est POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $data= json_decode(file_get_contents('php://input'));
@@ -21,20 +32,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $stmt->fetch();
 
     if ($user && password_verify($password, $user['passwords'])) {
-        if ($user['roles'] == 'admin') {
-            $_SESSION['admin_id'] = $user['id'];
-            http_response_code(200);
-            echo json_encode(array('message' => 'Vous êtes connecté en tant qu\'administrateur.'));
-        } else {
-            $_SESSION['user_id'] = $user['id'];
-            http_response_code(200);
-            echo json_encode(array('message' => 'Vous êtes connecté en tant qu\'utilisateur.'));
-        }
-    } else {
-        http_response_code(401);
-        echo json_encode(array('message' => 'Nom ou mot de passe incorrect.'));
-    }
+       // Création d'un jeton d'authentification
+       $jwt_secret = bin2hex(random_bytes(32));
+       $jwt_payload = array(
+           "iss" => "localhost",
+           "iat" => time(),
+           "exp" => time() + (7 * 24 * 60 * 60), // Expire dans une semaine
+           "sub" => $user['id'],
+           "username" => $user['username']
+       );
+       $jwt_token = jwt_encode($jwt_payload, $jwt_secret);
+
+       http_response_code(200);
+       echo json_encode(['token' => $jwt_token,
+       'message' =>"vous êtes connecté"]
+       );
+   } else {
+       // Mot de passe incorrect
+       http_response_code(401);
+       echo json_encode(['message' => 'Mot de passe incorrect']);
+   }
+
 }
+
 ?>
 
         

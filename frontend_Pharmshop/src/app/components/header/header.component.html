@@ -1,47 +1,45 @@
-
-<header>
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-  
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <i class="fa-solid fa-envelope  fa"></i><p>sdiarrassouba194@gmail.com</p> <i class="fa-solid fa-mobile fa"></i><p>+225 0759898060</p>
-      </div>
-      <div>
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-instagram"></i>
-      </div>
-    </div>
-  </nav>
-<nav class="navbar navbar-expand-lg ">
+<!-- <nav class="navbar navbar-expand-lg bg-light ">
   <div class="container-fluid">
-    <img  class="para" src="data:image/png;base64,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" alt="">
-      <span class="titre">PHARMASHOP</span>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <i class="fa-solid fa-envelope  fa"></i><p>sdiarrassouba194@gmail.com</p> <i class="fa-solid fa-mobile fa"></i><p>+225 0759898060</p>
+    </div>
+    <div>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+  </div>
+</nav> -->
+<header class="">
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid">
+    <img  class="para" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1yNAx6bQ4EIATpVyRpjhSKfyjVunjClXrmTu05E_r&s"  alt="">
+      <span class="phar">PHARMASHOP</span>
       <form class="d-flex" role="search">
-        <input class="form-control m"  [(ngModel)]="searchTerm" (keyup)="search($event)" type="search" placeholder="chercher la category  && nom produits" aria-label="Search" style="height: 60px;">
+        <input class="form-control m"   type="search" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="chercher un produit" aria-label="Search" style="height: 60px;">
       </form>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      
         <li class="nav-item">
           <a class="nav-link active" routerLink="home">Accueil</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="products">Parapharmacie</a>
         </li>
-       
         <li class="nav-item">
-          <a class="nav-link active" routerLink="home"><i class="fa-solid fa-circle-user"></i>Mon compte</a>
+          <a class="nav-link active" aria-current="page" routerLink="register"><i class="fa-solid fa-circle-user"></i>Mon compte</a>
         </li>
       </ul>
-      <button routerLink="cart" class="btn btn-primary">
-        <i class="las la-cart-plus icon"></i>
+      <button routerLink="cart" class="btn btn-primary ct">
+       mon panier <i class="las la-cart-plus icon"></i>
         <div class="badge bg-danger">{{totalItem}}</div>
       </button>
     </div>

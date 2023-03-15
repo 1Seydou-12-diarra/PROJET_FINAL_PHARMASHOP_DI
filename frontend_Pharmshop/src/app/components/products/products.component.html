@@ -1,27 +1,44 @@
+
 <div class="cart-top container-fluid">
   <div class="container d-flex">
     <div class="item">
       <a  (click)="filter('')">
-        <h5>All products</h5>
+        <h5>All PRODUCTS</h5>
       </a>
     </div>
     <div class="item">
       <a  (click)="filter('corps')">
-        <h5>Corps</h5>
+        <h5>CORPS</h5>
       </a>
     </div>
     <div class="item">
       <a  (click)="filter('cheveux')">
-        <h5>cheveux</h5>
+        <h5>CHEVEUX</h5>
       </a>
     </div>
     <div class="item">
       <a  (click)="filter('Beauté')">
-        <h5>Beaute</h5>
+        <h5>BEAUTE</h5>
+      </a>
+    </div>
+    <div class="item">
+      <a  (click)="filter('Parfums')">
+        <h5>PARFUMS</h5>
+      </a>
+    </div>
+    <div class="item">
+      <a  (click)="filter('Bébé et Enfants')">
+        <h5>BEBE ET ENFANT</h5>
+      </a>
+    </div>
+    <div class="item">
+      <a  (click)="filter('Homme')">
+        <h5>HOMME</h5>
       </a>
     </div>
   </div>
 </div>
+<br>
 <div class="container  star">
   <div class="row">
     <ng-container *ngFor="let item of filterCategory | filter:searchKey:'nom'">
@@ -35,7 +52,4 @@
     </ng-container>
   </div>
 </div>
-<footer class="mt-5 p-1 bg-dark text-white sticky-bottom">
-  <p class="text-center"><span> Copyright &copy; 2018 Tout droit réservés | Groupe DYD Services</span></p>
-</footer>
-
+<app-footer></app-footer>
